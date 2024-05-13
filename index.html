@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="assets/favicon-32x32.png" type="image/x-icon">
+    <title>Markdown | Online Markdown Editor</title>
+</head>
+<body>
+    <main>
+        <div class="flex_container">
+            <div class="documents">
+                <div class="documents_flex">
+                    <div>
+                        <div class="documents_header">
+                            <img src="assets/logo.svg" alt="" class="documents_logo">
+                            <span class="documents_header-title">MY DOCUMENTS</span>
+                            <a href="#" role="button">+ New Document</a>
+                        </div>
+                        <div class="documents_document">
+                            <div class="documents_document--img">
+                                <img src="assets/icon-document.svg" alt="">
+                            </div>
+                            <div class="documents_document--data">
+                                <span class="data_date">
+                                    2024 Apr 05
+                                </span>
+                                <span class="data_name">
+                                    untitled.md
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="documents_switch">
+                        <img src="assets/icon-dark-mode.svg" class="light-mode" alt="">
+                        <div class="switch_main" role="switch"><div class="switch_inner"></div></div>
+                        <img src="assets/icon-light-mode.svg" class="dark-mode" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="editor_wrapper">
+                <header>
+                    <div class="menu_toggle">
+                        <div class="icon-wrapper">
+                            <img src="assets/icon-menu.svg" alt="" class="open">
+                            <img src="assets/icon-close.svg" alt="" class="close">
+                        </div>
+                        <div class="logo_wrapper">
+                            <img src="assets/logo.svg" alt="" class="logo">
+                        </div>
+                        <div class="file_naming">
+                            <img src="assets/icon-document.svg" alt="">
+                            <div>
+                                <label for="document_name">Document Name</label>
+                                <input type="text" name="document_name" id="document_name" value="welcome.md">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="file_functions">
+                        <img src="assets/icon-delete.svg" alt="" class="delete">
+                        <a href="#" role="button" class="save"><img src="assets/icon-save.svg" alt="" ><span>  Save Changes</span></a>
+                    </div>
+                </header>
+                <div class="editor_area">
+                    <div class="editor">
+                        <div class="markdown">
+                            <div class="markdown_header">
+                                <span>MARKDOWN</span>
+                                <div>
+                                    <img src="assets/icon-show-preview.svg" alt="" class="show-markd">
+                                    <img src="assets/icon-hide-preview.svg" alt="" class="hide-markd">
+                                </div>
+                            </div>
+                            <div class="text_editor">
+                                <form action="">
+                                    <textarea name="txt-editor" id="txt-editor" value="hello"></textarea>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="preview">
+                            <div class="preview_header">
+                                <span>PREVIEW</span>
+                                <div>
+                                    <img src="assets/icon-show-preview.svg" alt="" class="show-preview">
+                                    <img src="assets/icon-hide-preview.svg" alt="" class="hide-preview">
+                                </div>
+                            </div>
+                            <div class="text_preview"> </div>
+                        </div>
+                        
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
