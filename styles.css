@@ -22,10 +22,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: color 1s ease;
 }
 
 body {
     font-family: 'Roboto';
+    background-color: var(--white);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -69,7 +71,7 @@ ul li::before {
 }
 
 .text_preview code {
-    color: var(--header-bg);
+    color: var(--docs-bg);
     font-size: .8rem;
 }
 
@@ -94,8 +96,9 @@ a {
 
 .text_preview pre {
     padding: 1rem;
-    background-color: var(--section-header-bg);
+    background-color: var(--icon-bg-trans);
     margin-block: 1rem;
+    color: var(--docs-bg);
 }
 
 blockquote p {
@@ -126,7 +129,7 @@ blockquote {
 
 
 .documents {
-    background-color: var(--docs-bg);
+    background-color: #1D1F22;
     padding: 2rem 1rem;
     display: none;
     flex: 1;
@@ -168,6 +171,14 @@ blockquote {
     display: flex;
     gap: 1rem;
     align-items: center;
+    
+    padding: .5em;
+    border-radius: 10px;
+}
+
+.documents_document:hover {
+    cursor: pointer;
+    background-color: var(--icon-bg-trans);
 }
 
 .data_date {
@@ -203,6 +214,20 @@ blockquote {
     transform: translateY(-50%);
     position: absolute;
     right: 2px;
+    transition: right .3s ease-out;
+}
+
+.switch_inner:hover,
+.switch_main:hover {
+    cursor: pointer;
+}
+
+.switched {
+    right: calc(100% - 14px);
+}
+
+.orange {
+    background-color: var(--btn-bg);
 }
 
 header {
@@ -233,7 +258,7 @@ input {
     background-color: transparent;
     border: none;
     padding-inline: 1rem;
-    color: var(--white);
+    color: var(--section-header-bg);
 }
 form {
     width: 100vw;
@@ -246,6 +271,8 @@ textarea {
     border: none;
     height: 100dvh;
     font-size: inherit;
+    background-color: transparent;
+    color: var(--editor-text);
 }
 
 .logo {
@@ -257,6 +284,11 @@ textarea {
     height: fit-content;
     font-size: 0;
     background-color: var(--icon-bg-trans);
+}
+
+.icon-wrapper:hover {
+    cursor: pointer;
+    background-color: var(--btn-hover);
 }
 
 .open,
@@ -328,6 +360,10 @@ textarea {
     
 }
 
+.markdown ::-webkit-scrollbar {
+    display: none;
+}
+
 .text_preview {
     padding: 1rem;
 }
@@ -366,6 +402,40 @@ textarea:focus {
 
 
 
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --white: #151619;
+        --header-bg: #35393F;
+        --section-header-bg: #2B2D31;
+        --editor-text: #F5F5F5;
+        --docs-bg: #fff;
+        
+    }
+}
+
+.light {
+    --header-bg: #2B2D31;
+    --menu-icon-bg: #979797;
+    --section-header-font: #7C8187;
+    --section-header-bg: #F5F5F5;
+    --editor-text: #35393F;
+    --preview-text-main: #7C8187;
+    --btn-bg: #E46643;
+    --btn-hover: #F39765;
+    --docs-bg: #1D1F22;
+    --white: #fff;
+    --icon-bg-trans: #97979710;
+}
+
+.dark {
+    --white: #151619;
+    --header-bg: #35393F;
+    --section-header-bg: #2B2D31;
+    --editor-text: #F5F5F5;
+    --docs-bg: #fff;
+}
+
 @media screen and (min-width:768px){
     header label {
         display: block;
@@ -388,6 +458,7 @@ textarea:focus {
     .editor {
         display: flex;
         width: 100dvw;
+        justify-content: center;
     }
 
     .show-markd,
